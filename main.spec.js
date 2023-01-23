@@ -1,27 +1,34 @@
-describe("Тестування ageClassification ()", function() {
-  it("Перевірим що ageClassification = детский возраст", function() {
-const num > 0;
-
-
-    expect(ageClassification()).toBe(null);
+/* eslint-disable no-undef */
+describe("Test functions:", function () {
+  it("ageClassification()", function () {
+    expect(ageClassification(-1)).toBe(null);
+    expect(ageClassification(1)).toBe("детский возраст");
+    expect(ageClassification(24)).toBe("детский возраст");
+    expect(ageClassification(24.01)).toBe("молодой возраст");
+    expect(ageClassification(44)).toBe("молодой возраст");
+    expect(ageClassification(44.01)).toBe("средний возраст");
+    expect(ageClassification(65)).toBe("средний возраст");
+    expect(ageClassification(65.01)).toBe("пожилой возраст");
+    expect(ageClassification(75)).toBe("пожилой возраст");
+    expect(ageClassification(75.01)).toBe("старческий возраст");
+    expect(ageClassification(90)).toBe("старческий возраст");
+    expect(ageClassification(90.01)).toBe("долгожители");
+    expect(ageClassification(122)).toBe("долгожители");
+    expect(ageClassification(122.01)).toBe(null);
+    expect(ageClassification(150)).toBe(null);
+  });
+  it("weekFn()", function () {
+    expect(weekFn(1)).toBe("Понедельник");
+    expect(weekFn(5)).toBe("Пятница");
+    expect(weekFn(6)).toBe("Суббота");
+    expect(weekFn(0.5)).toBe(null);
+    expect(weekFn(8)).toBe(null);
+  });
+  it("mainFunc()", function () {
+    expect(mainFunc(2, 5, cbRandom)).not.toBeLessThan(2);
+    expect(mainFunc(2, 5, cbRandom)).not.toBeGreaterThan(5);
+    expect(mainFunc(2, 5, cbPow)).toBe(32);
+    expect(mainFunc(2, 5, cbAdd)).toBe(7);
+    expect(mainFunc(2, 5, "text")).toBe(false);
   });
 });
-
-
-//  * Блок тестирования:
- 
-//  * console.log(1, ageClassification(-1) === null);
-//  * console.log(2, ageClassification(1) === 'детский возраст');
-//  * console.log(3, ageClassification(24) === 'детский возраст');
-//  * console.log(4, ageClassification(24.01) === 'молодой возраст');
-//  * console.log(5, ageClassification(44) === 'молодой возраст');
-//  * console.log(6, ageClassification(44.01) === 'средний возраст');
-//  * console.log(7, ageClassification(65) === 'средний возраст');
-//  * console.log(8, ageClassification(65.01) === 'пожилой возраст');
-//  * console.log(9, ageClassification(75) === 'пожилой возраст');
-//  * console.log(10, ageClassification(75.01) === 'старческий возраст');
-//  * console.log(11, ageClassification(90) === 'старческий возраст');
-//  * console.log(12, ageClassification(90.01) === 'долгожители');
-//  * console.log(13, ageClassification(122) === 'долгожители');
-//  * console.log(14, ageClassification(122.01) === null);
-//  * console.log(15, ageClassification(150) === null);
